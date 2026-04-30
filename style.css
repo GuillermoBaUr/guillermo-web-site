@@ -1,0 +1,68 @@
+body{
+    background-color: #1e1f26;
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #1e1f26;
+  
+  /* Centering the title */
+  padding: 1.5rem 0; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  
+  /* Matching the footer's subtle line */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+h1 {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  color: #E0E1E6;
+  margin: 0;
+  font-size: 1.6rem; /* A tiny bit larger since it's the solo star */
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-transform: none; /* Keep it as "My Portfolio" or use uppercase if you prefer */
+}
+
+.main-footer {
+    padding: 3rem 1rem;
+    background-color: #1e1f26; /* Matches your background */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-item {
+    font-family: "League Spartan", sans-serif;
+    text-decoration: none;
+    color: #a0a1a6; /* Muted grey so it doesn't distract from content */
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-item:hover {
+    color: #7CF3FF; /* Pops your accent color on hover */
+}
+
+.copyright {
+    font-family: "League Spartan", sans-serif;
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
