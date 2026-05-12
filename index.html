@@ -1,30 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guillermo's Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guillermo Badillo — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <header class="main-header">
-        <h1>MY PORTFOILO</h1>
-    </header>
 
-    <main>
-        </main>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+      <span class="logo">GBU<span class="logo-dot">.</span></span>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-
-    <footer class="main-footer">
-        <div class="footer-links">
-            <a href="./public/about.html" class="footer-item">About me</a>
-            <a href="./public/contact.html" class="footer-item">Contact me</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Mechatronics Engineer</p>
+      <h1 class="hero-title">
+        Guillermo<br/><span class="hero-title-accent">Badillo Uribe</span>
+      </h1>
+      <p class="hero-sub">
+        Building intelligent systems where hardware meets software, integrating embedded firmware, Real-Time OS, and AI-driven data analytics.
+      </p>
+      <div class="hero-chips">
+        <span class="chip chip-c">C/C++</span>
+        <span class="chip chip-py">Python</span>
+        <span class="chip chip-rtos">FreeRTOS</span>
+        <span class="chip chip-hw">Hardware Integration</span>
+        <span class="chip chip-ai">AI & Data Analytics</span>
+        <span class="chip chip-qa">QA Testing</span>
+      </div>
+      <a href="#projects" class="cta-btn">View Projects</a>
+    </div>
+    <div class="hero-visual">
+      <div class="terminal-card">
+        <div class="terminal-bar">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="t-title">firmware.c</span>
         </div>
-        <p class="copyright">© 2026 Guillermo Badillo Uribe</p>
-    </footer>
+        <pre class="terminal-code"><span class="tc-comment">// STM32 encoder interrupt handler</span>
+<span class="tc-kw">void</span> <span class="tc-fn">EXTI0_IRQHandler</span>(<span class="tc-kw">void</span>) {
+  <span class="tc-kw">if</span> (encoder_direction()) {
+    enqueue_event(<span class="tc-str">CMD_INC</span>);
+  } <span class="tc-kw">else</span> {
+    enqueue_event(<span class="tc-str">CMD_DEC</span>);
+  }
+  EXTI-&gt;PR |= EXTI_PR_PR0;
+}</pre>
+      </div>
+    </div>
+  </section>
 
+    <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        
+        <!-- Updated Hook -->
+        <p>I build <strong>intelligent systems</strong> where hardware meets software. As a Mechatronics Engineer, I specialize in the intersection of embedded firmware, real-time OS design, and AI-driven data analytics.</p>
+        
+        <!-- Updated Experience Narrative -->
+        <p>My work focuses on transforming physical hardware into smart, autonomous systems, moving beyond rule-based logic to <strong>data-driven intelligence</strong>. From architecting bare-metal STM32 firmware and FreeRTOS environments to developing Python-based AI frameworks, I ensure every system is defined by <strong>integrity, precision, and deterministic behavior.</strong></p>
+
+        <div class="skills-grid">
+          <!-- Embedded & Systems -->
+          <div class="skill-group">
+            <span class="skill-group-label">Embedded Systems</span>
+            <div class="skill-tags">
+              <span class="chip chip-c">C/C++</span>
+              <span class="chip chip-rtos">FreeRTOS</span>
+              <span>STM32 / ESP32</span>
+              <span>Raspberry Pi</span>
+              <span>UART / SPI / I2C</span>
+            </div>
+          </div>
+
+          <!-- Intelligence & Software -->
+          <div class="skill-group">
+            <span class="skill-group-label">AI & Data Intelligence</span>
+            <div class="skill-tags">
+              <span class="chip chip-py">Python</span>
+              <span class="chip chip-ai">Data Analytics (SQL)</span>
+              <span class="chip chip-ai">Generative AI</span>
+              <span class="chip chip-ai">Machine Learning</span>
+            </div>
+          </div>
+
+          <!-- Integration & Quality -->
+          <div class="skill-group">
+            <span class="skill-group-label">Integration & Quality</span>
+            <div class="skill-tags">
+              <span class="chip chip-hw">Hardware Integration</span>
+              <span class="chip chip-qa">QA Testing</span>
+              <span class="chip chip-qa">Git & Agile</span>
+              <span class="chip chip-qa">Documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-sub">Filter by technology stack</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="embedded">
+        Firmware Development
+      </button>
+      <button class="filter-btn" data-filter="python">
+        Python Development
+      </button>
+      <button class="filter-btn" data-filter="data">
+        Data Analysis
+      </button>
+    </div>
+
+    <!-- PROJECT GRID -->
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- PROJECT 1: CRJ-200 -->
+      <article class="project-card" data-categories="embedded">
+        <div class="card-img-wrap">
+          <img src="Img_project/CRJ-200.jpg" alt="CRJ-200 Autopilot Panel"
+            onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
+          <div class="img-fallback-content">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="12" width="64" height="36" rx="4" stroke="#7CF3FF" stroke-width="1.5"/>
+              <circle cx="22" cy="30" r="6" stroke="#7CF3FF" stroke-width="1.2"/>
+              <rect x="32" y="22" width="8" height="4" rx="1" fill="#7CF3FF" opacity="0.4"/>
+              <rect x="32" y="28" width="8" height="4" rx="1" fill="#7CF3FF" opacity="0.4"/>
+              <rect x="32" y="34" width="8" height="4" rx="1" fill="#7CF3FF" opacity="0.4"/>
+              <rect x="44" y="22" width="20" height="16" rx="2" stroke="#7CF3FF" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="card-badges">
+            <span class="badge badge-embedded">Embedded</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-lang-row">
+            <span class="lang-tag">C</span>
+            <span class="lang-tag">STM32F4</span>
+            <span class="lang-tag">UART</span>
+            <span class="lang-tag">EXTI</span>
+          </div>
+          <h3 class="card-title">CRJ‑200 Autopilot Panel</h3>
+          <p class="card-desc">Custom STM32 firmware interfacing a physical CRJ‑200 autopilot panel with X‑Plane. Features encoder direction detection via EXTI interrupts, a linked-list event queue, and a bit-packed 8-bit command protocol.</p>
+          <ul class="card-features">
+            <li>Encoder direction via EXTI interrupts</li>
+            <li>Linked-list event queue for reliable TX</li>
+            <li>Bit-packed 8-bit command protocol</li>
+            <li>LED delta-update output parsing</li>
+          </ul>
+          <a href="https://github.com/GuillermoBaUr/CRJ-200_Autopilot_Panel_STM32" target="_blank" rel="noopener" class="card-link">
+            View Repository <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Whack-A-Mole -->
+      <article class="project-card" data-categories="embedded">
+        <div class="card-img-wrap">
+          <img src="Img_project/Whack-A-Mole.jpeg" alt="FreeRTOS Whack-A-Mole"
+            onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
+          <div class="img-fallback-content">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="15" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5"/>
+              <rect x="33" y="15" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5" fill="#A78BFA" fill-opacity="0.2"/>
+              <rect x="56" y="15" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5"/>
+              <rect x="10" y="35" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5" fill="#A78BFA" fill-opacity="0.2"/>
+              <rect x="33" y="35" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5"/>
+              <rect x="56" y="35" width="14" height="14" rx="3" stroke="#A78BFA" stroke-width="1.5" fill="#A78BFA" fill-opacity="0.2"/>
+            </svg>
+          </div>
+          <div class="card-badges">
+            <span class="badge badge-embedded">Embedded</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-lang-row">
+            <span class="lang-tag">C</span>
+            <span class="lang-tag">FreeRTOS</span>
+            <span class="lang-tag">SPI</span>
+            <span class="lang-tag">OLED</span>
+          </div>
+          <h3 class="card-title">FreeRTOS Whack‑A‑Mole</h3>
+          <p class="card-desc">A real-time embedded Whack-A-Mole game on STM32 using FreeRTOS tasks, queues, and semaphores. Drives an SSD1331 OLED display over SPI with deterministic timing and non-blocking task behavior.</p>
+          <ul class="card-features">
+            <li>Multiple RTOS tasks with message queues</li>
+            <li>Semaphores for OLED sync & turn progression</li>
+            <li>Software timer for randomized LED selection</li>
+            <li>EXTI interrupt debouncing for buttons</li>
+          </ul>
+          <a href="https://github.com/GuillermoBaUr/whackamole-rtos" target="_blank" rel="noopener" class="card-link">
+            View Repository <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: Metroliner III Pedestal -->
+      <article class="project-card" data-categories="python">
+        <div class="card-img-wrap">
+          <img src="Img_project/Pedestal.png" alt="Metroliner III Pedestal"
+            onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
+          <div class="img-fallback-content">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="8" width="50" height="44" rx="4" stroke="#34D399" stroke-width="1.5"/>
+              <rect x="20" y="14" width="40" height="22" rx="2" fill="#34D399" fill-opacity="0.1" stroke="#34D399" stroke-width="1"/>
+              <circle cx="28" cy="44" r="3" stroke="#34D399" stroke-width="1.2"/>
+              <circle cx="40" cy="44" r="3" stroke="#34D399" stroke-width="1.2"/>
+              <circle cx="52" cy="44" r="3" stroke="#34D399" stroke-width="1.2"/>
+              <line x1="30" y1="25" x2="50" y2="25" stroke="#34D399" stroke-width="1" opacity="0.6"/>
+              <line x1="30" y1="29" x2="45" y2="29" stroke="#34D399" stroke-width="1" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="card-badges">
+            <span class="badge badge-python">Python</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-lang-row">
+            <span class="lang-tag">Python</span>
+            <span class="lang-tag">Tkinter</span>
+            <span class="lang-tag">UDP</span>
+            <span class="lang-tag">Raspberry Pi</span>
+          </div>
+          <h3 class="card-title">Metroliner III Pedestal</h3>
+          <p class="card-desc">A fully animated touchscreen simulation of the Metroliner III cockpit pedestal for aviation training. Multithreaded event-driven architecture with real-time UDP communication to X-Plane.</p>
+          <ul class="card-features">
+            <li>Multithreaded event-driven architecture</li>
+            <li>Real-time UDP link with X-Plane simulator</li>
+            <li>Image-based control widgets & animations</li>
+            <li>UI callback framework for system integration</li>
+          </ul>
+          <a href="https://github.com/GuillermoBaUr/Metroliner-III-Pedestal-Display" target="_blank" rel="noopener" class="card-link">
+            View Repository <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: SGC Data Extractor -->
+      <article class="project-card" data-categories="python data">
+        <div class="card-img-wrap">
+          <img src="Img_project/SGI-Extractor.png" alt="SGC Data Extractor"
+            onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
+          <div class="img-fallback-content">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="28" height="40" rx="3" stroke="#FBBF24" stroke-width="1.5"/>
+              <line x1="15" y1="18" x2="33" y2="18" stroke="#FBBF24" stroke-width="1" opacity="0.7"/>
+              <line x1="15" y1="23" x2="33" y2="23" stroke="#FBBF24" stroke-width="1" opacity="0.5"/>
+              <line x1="15" y1="28" x2="28" y2="28" stroke="#FBBF24" stroke-width="1" opacity="0.4"/>
+              <path d="M44 30 L56 30 M56 30 L52 26 M56 30 L52 34" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="60" y="14" width="12" height="32" rx="2" stroke="#FBBF24" stroke-width="1.5"/>
+              <rect x="62" y="30" width="2" height="10" fill="#FBBF24" opacity="0.7"/>
+              <rect x="65" y="24" width="2" height="16" fill="#FBBF24" opacity="0.7"/>
+              <rect x="68" y="28" width="2" height="12" fill="#FBBF24" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="card-badges">
+            <span class="badge badge-python">Python</span>
+            <span class="badge badge-data">Data Analysis</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-lang-row">
+            <span class="lang-tag">Python</span>
+            <span class="lang-tag">Tkinter</span>
+            <span class="lang-tag">Regex</span>
+            <span class="lang-tag">Excel</span>
+          </div>
+          <h3 class="card-title">SGC Data Extractor</h3>
+          <p class="card-desc">Automation tool that extracts and consolidates academic metrics from institutional SGI documents into professionally formatted Excel reports, with recursive .zip processing and COM API document conversion.</p>
+          <ul class="card-features">
+            <li>Multithreaded background processing</li>
+            <li>Word COM API for .doc → .docx conversion</li>
+            <li>Advanced regex parsing across split paragraphs</li>
+            <li>Styled Excel output with auto-adjusted layouts</li>
+          </ul>
+          <a href="https://github.com/GuillermoBaUr/data-extraction-project" target="_blank" rel="noopener" class="card-link">
+            View Repository <span>→</span>
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+
+    <p class="no-results" id="noResults" style="display:none;">No projects match this filter.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-sub">Open to collaboration, questions, or just a good conversation about embedded systems.</p>
+      <div class="contact-links">
+        <a href="mailto:badillouribeguillermoca@gmail.com" class="contact-card">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">badillouribeguillermoca@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/guillermo-badillo-uribe-382301228/" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">in</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+          </div>
+        </a>
+        <a href="https://github.com/GuillermoBaUr" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <span class="logo">GBU<span class="logo-dot">.</span></span>
+    <p class="copyright">© 2026 Guillermo Badillo Uribe — Mechatronics Engineer</p>
+  </footer>
+
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const noResults = document.getElementById('noResults');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let visible = 0;
+        cards.forEach(card => {
+          const cats = card.dataset.categories.split(' ');
+          const show = filter === 'all' || cats.includes(filter);
+          if (show) {
+            card.classList.remove('hidden');
+            card.classList.add('visible');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+            card.classList.remove('visible');
+          }
+        });
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+
+    // Intersection observer for scroll-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.project-card, .about-inner, .contact-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
