@@ -44,41 +44,106 @@
       </div>
       <a href="#projects" class="cta-btn">View Projects</a>
     </div>
-    <div class="hero-visual">
-      <div class="terminal-card">
-        <div class="terminal-bar">
-          <span class="t-dot t-red"></span>
-          <span class="t-dot t-yellow"></span>
-          <span class="t-dot t-green"></span>
-          <span class="t-title">firmware.c</span>
-        </div>
-        <pre class="terminal-code"><span class="tc-comment">// STM32 encoder interrupt handler</span>
-<span class="tc-kw">void</span> <span class="tc-fn">EXTI0_IRQHandler</span>(<span class="tc-kw">void</span>) {
-  <span class="tc-kw">if</span> (encoder_direction()) {
-    enqueue_event(<span class="tc-str">CMD_INC</span>);
-  } <span class="tc-kw">else</span> {
-    enqueue_event(<span class="tc-str">CMD_DEC</span>);
-  }
-  EXTI-&gt;PR |= EXTI_PR_PR0;
-}</pre>
-      </div>
-    </div>
+<div class="hero-visual">
+  <div class="hero-visual">
+  <div class="arch-diagram">
+
+      <svg width="100%" viewBox="0 0 420 622" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three-layer system architecture</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three isometric platforms: AI/Data Layer, Embedded Firmware, and Physical Layer</desc>
+  <defs>
+    
+    <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7CF3FF" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!--
+    Isometric platform formula:
+    Top face = diamond: TL(cx-hw, cy) T(cx, cy-hh) TR(cx+hw, cy) B(cx, cy+hh)
+    Left face: TL, B(top), BL(cx-hw, cy+depth), BB(cx, cy+hh+depth)
+    Right face: TR, B(top), BB(cx, cy+hh+depth), BR(cx+hw, cy+depth)
+
+    Platform 1 (AI): cx=210, cy=90,  hw=148, hh=66, depth=30
+    Platform 2 (FW): cx=210, cy=250, hw=148, hh=66, depth=30
+    Platform 3 (PH): cx=210, cy=410, hw=148, hh=66, depth=30
+  -->
+
+  <!-- ── PLATFORM 1: AI / DATA LAYER ── -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Top face: diamond -->
+    <polygon points="210,24  358,90  210,156  62,90" fill="rgba(10,28,38,0.92)" stroke="#7CF3FF" stroke-width="1.1" style="fill:rgba(10, 28, 38, 0.92);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Left face -->
+    <polygon points="62,90  210,156  210,186  62,120" fill="rgba(5,16,24,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(5, 16, 24, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Right face -->
+    <polygon points="358,90  210,156  210,186  358,120" fill="rgba(3,12,18,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(3, 12, 18, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Title -->
+    <text x="210" y="95" fill="#7CF3FF" text-anchor="middle" opacity="0.95" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">AI / Data Layer</text>
+  </g>
+
+  <!-- Connector AI → FW -->
+  <circle cx="210" cy="193" r="3.5" fill="#7CF3FF" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.833814;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="210" y1="197" x2="210" y2="230" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Right spine AI → FW -->
+  <line x1="374" y1="115" x2="374" y2="278" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.25" stroke-dasharray="5 4" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="374" y1="277" x2="374" y2="277" stroke="#7CF3FF" stroke-width="0.7" marker-end="url(#a1)" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── PLATFORM 2: EMBEDDED FIRMWARE ── -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Top face: diamond -->
+    <polygon points="210,237  358,303  210,369  62,303" fill="rgba(18,10,40,0.92)" stroke="#A78BFA" stroke-width="1.1" style="fill:rgba(18, 10, 40, 0.92);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Left face -->
+    <polygon points="62,303  210,369  210,399  62,333" fill="rgba(10,5,26,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(10, 5, 26, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Right face -->
+    <polygon points="358,303  210,369  210,399  358,333" fill="rgba(7,3,20,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(7, 3, 20, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Title -->
+    <text x="210" y="308" fill="#A78BFA" text-anchor="middle" opacity="0.95" style="fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Embedded Firmware</text>
+  </g>
+
+  <!-- Connector FW → PH -->
+  <circle cx="210" cy="406" r="3.5" fill="#A78BFA" style="animation-delay:.4s;fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.433867;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="210" y1="410" x2="210" y2="443" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="animation-delay:.5s;fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Right spine FW → PH -->
+  <line x1="374" y1="328" x2="374" y2="458" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.25" stroke-dasharray="5 4" style="animation-delay:.5s;fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="374" y1="457" x2="374" y2="457" stroke="#A78BFA" stroke-width="0.7" marker-end="url(#a2)" style="fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── PLATFORM 3: PHYSICAL LAYER ── -->
+  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Top face: diamond -->
+    <polygon points="210,450  358,516  210,582  62,516" fill="rgba(6,22,16,0.92)" stroke="#34D399" stroke-width="1.1" style="fill:rgba(6, 22, 16, 0.92);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Left face -->
+    <polygon points="62,516  210,582  210,612  62,546" fill="rgba(3,13,9,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(3, 13, 9, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Right face -->
+    <polygon points="358,516  210,582  210,612  358,546" fill="rgba(2,10,7,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(2, 10, 7, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Title -->
+    <text x="210" y="521" fill="#34D399" text-anchor="middle" opacity="0.95" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Physical Layer</text>
+  </g>
+
+</svg>
+    
+  </div>
+</div>
+</div>
   </section>
 
-    <!-- ABOUT -->
+  <!-- ABOUT -->
   <section id="about" class="about-section">
     <div class="about-inner">
+
+      <!-- LEFT: Text + Skills -->
       <div class="about-text">
         <h2 class="section-title">About Me</h2>
-        
-        <!-- Updated Hook -->
+
         <p>I build <strong>intelligent systems</strong> where hardware meets software. As a Mechatronics Engineer, I specialize in the intersection of embedded firmware, real-time OS design, and AI-driven data analytics.</p>
-        
-        <!-- Updated Experience Narrative -->
+
         <p>My work focuses on transforming physical hardware into smart, autonomous systems, moving beyond rule-based logic to <strong>data-driven intelligence</strong>. From architecting bare-metal STM32 firmware and FreeRTOS environments to developing Python-based AI frameworks, I ensure every system is defined by <strong>integrity, precision, and deterministic behavior.</strong></p>
 
         <div class="skills-grid">
-          <!-- Embedded & Systems -->
           <div class="skill-group">
             <span class="skill-group-label">Embedded Systems</span>
             <div class="skill-tags">
@@ -89,8 +154,6 @@
               <span>UART / SPI / I2C</span>
             </div>
           </div>
-
-          <!-- Intelligence & Software -->
           <div class="skill-group">
             <span class="skill-group-label">AI & Data Intelligence</span>
             <div class="skill-tags">
@@ -100,8 +163,6 @@
               <span class="chip chip-ai">Machine Learning</span>
             </div>
           </div>
-
-          <!-- Integration & Quality -->
           <div class="skill-group">
             <span class="skill-group-label">Integration & Quality</span>
             <div class="skill-tags">
@@ -113,8 +174,45 @@
           </div>
         </div>
       </div>
-    </div>
-</section>
+
+      <!-- RIGHT: Photo + Badges -->
+      <div class="about-sidebar">
+
+        <!-- Profile Photo -->
+        <div class="profile-photo-wrap">
+          <div class="profile-photo-ring"></div>
+          <img
+            src="assets/images/profile.jpg"
+            alt="Guillermo Badillo Uribe"
+            class="profile-photo"
+            onerror="this.parentElement.classList.add('photo-fallback'); this.remove();"
+          />
+          <!-- Fallback avatar if no image provided -->
+          <div class="photo-fallback-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="30" r="16" stroke="#7CF3FF" stroke-width="1.5"/>
+              <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="#7CF3FF" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="profile-name-tag">
+            <span class="profile-name">Guillermo B.</span>
+            <span class="profile-role">Mechatronics Engineer</span>
+          </div>
+        </div>
+
+        <!-- Credly Badges -->
+        <div class="badges-wrap">
+          <span class="badges-label">Certifications</span>
+          <div class="badges-row">
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="a637dcc9-03c4-4bcb-89ef-611695e4e165" data-share-badge-host="https://www.credly.com"></div>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6fbb575b-84bd-49a5-afcb-3d3cd9d182b4" data-share-badge-host="https://www.credly.com"></div>
+          </div>
+        </div>
+
+      </div><!-- /about-sidebar -->
+
+    </div><!-- /about-inner -->
+  </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects-section">
@@ -123,27 +221,19 @@
       <p class="section-sub">Filter by technology stack</p>
     </div>
 
-    <!-- FILTER TABS -->
     <div class="filter-bar" role="group" aria-label="Filter projects by category">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="embedded">
-        Firmware Development
-      </button>
-      <button class="filter-btn" data-filter="python">
-        Python Development
-      </button>
-      <button class="filter-btn" data-filter="data">
-        Data Analysis
-      </button>
+      <button class="filter-btn" data-filter="embedded">Firmware Development</button>
+      <button class="filter-btn" data-filter="python">Python Development</button>
+      <button class="filter-btn" data-filter="data">Data Analysis</button>
     </div>
 
-    <!-- PROJECT GRID -->
     <div class="projects-grid" id="projectsGrid">
 
       <!-- PROJECT 1: CRJ-200 -->
       <article class="project-card" data-categories="embedded">
         <div class="card-img-wrap">
-          <img src="Img_project/CRJ-200.jpg" alt="CRJ-200 Autopilot Panel"
+          <img src="assets/images/CRJ-200.jpg" alt="CRJ-200 Autopilot Panel"
             onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
           <div class="img-fallback-content">
             <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,7 +273,7 @@
       <!-- PROJECT 2: Whack-A-Mole -->
       <article class="project-card" data-categories="embedded">
         <div class="card-img-wrap">
-          <img src="Img_project/Whack-A-Mole.jpeg" alt="FreeRTOS Whack-A-Mole"
+          <img src="assets/images/Whack-A-Mole.jpeg" alt="FreeRTOS Whack-A-Mole"
             onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
           <div class="img-fallback-content">
             <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -223,7 +313,7 @@
       <!-- PROJECT 3: Metroliner III Pedestal -->
       <article class="project-card" data-categories="python">
         <div class="card-img-wrap">
-          <img src="Img_project/Pedestal.png" alt="Metroliner III Pedestal"
+          <img src="assets/images/Pedestal.png" alt="Metroliner III Pedestal"
             onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
           <div class="img-fallback-content">
             <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -264,7 +354,7 @@
       <!-- PROJECT 4: SGC Data Extractor -->
       <article class="project-card" data-categories="python data">
         <div class="card-img-wrap">
-          <img src="Img_project/SGI-Extractor.png" alt="SGC Data Extractor"
+          <img src="assets/images/SGI-Extractor.png" alt="SGC Data Extractor"
             onerror="this.parentElement.classList.add('img-fallback'); this.remove();" />
           <div class="img-fallback-content">
             <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -305,7 +395,7 @@
         </div>
       </article>
 
-    </div><!-- /projects-grid -->
+    </div>
 
     <p class="no-results" id="noResults" style="display:none;">No projects match this filter.</p>
   </section>
@@ -314,7 +404,7 @@
   <section id="contact" class="contact-section">
     <div class="contact-inner">
       <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-sub">Open to collaboration, questions, or just a good conversation about embedded systems.</p>
+      <p class="contact-sub">Open to collaboration, questions, or just a good conversation.</p>
       <div class="contact-links">
         <a href="mailto:badillouribeguillermoca@gmail.com" class="contact-card">
           <div class="contact-icon">✉</div>
@@ -346,6 +436,9 @@
     <span class="logo">GBU<span class="logo-dot">.</span></span>
     <p class="copyright">© 2026 Guillermo Badillo Uribe — Mechatronics Engineer</p>
   </footer>
+
+  <!-- Credly embed script (load once) -->
+  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
   <script>
     // Filter logic
@@ -389,4 +482,4 @@
     });
   </script>
 </body>
-</html>
+</html>>
