@@ -177,17 +177,12 @@ body {
   font-weight: 400;
 }
 
-/* Core Languages */
-.chip-c { color: #7CF3FF; border-color: rgba(124,243,255,0.3); background: rgba(124,243,255,0.05); }
-.chip-py { color: #34D399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.05); }
-
-/* Execution & System */
+.chip-c    { color: #7CF3FF; border-color: rgba(124,243,255,0.3); background: rgba(124,243,255,0.05); }
+.chip-py   { color: #34D399; border-color: rgba(52,211,153,0.3);  background: rgba(52,211,153,0.05);  }
 .chip-rtos { color: #A78BFA; border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.05); }
-.chip-hw { color: #94A3B8; border-color: rgba(148,163,184,0.3); background: rgba(148,163,184,0.05); }
-
-/* Intelligence & Quality */
-.chip-ai { color: #FBBF24; border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.05); }
-.chip-qa { color: #38BDF8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.05); }
+.chip-hw   { color: #94A3B8; border-color: rgba(148,163,184,0.3); background: rgba(148,163,184,0.05); }
+.chip-ai   { color: #FBBF24; border-color: rgba(251,191,36,0.3);  background: rgba(251,191,36,0.05);  }
+.chip-qa   { color: #38BDF8; border-color: rgba(56,189,248,0.3);  background: rgba(56,189,248,0.05);  }
 
 .cta-btn {
   display: inline-flex;
@@ -210,8 +205,21 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(124,243,255,0.2);
 }
-.cta-arrow { transition: transform var(--transition); }
-.cta-btn:hover .cta-arrow { transform: translateY(3px); }
+
+/* ─── ARCHITECTURE DIAGRAM HERO ─── */
+.arch-diagram {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arch-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(124,243,255,0.08));
+}
 
 /* Terminal card */
 .hero-visual {
@@ -326,7 +334,6 @@ body {
   color: #0d0e14;
   font-weight: 700;
 }
-.filter-icon { font-size: 1rem; }
 
 /* ─── PROJECT GRID ─── */
 .projects-grid {
@@ -357,11 +364,8 @@ body {
   box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(124,243,255,0.08);
   transform: translateY(-4px);
 }
-.project-card.hidden {
-  display: none;
-}
+.project-card.hidden { display: none; }
 
-/* Card image */
 .card-img-wrap {
   position: relative;
   height: 200px;
@@ -374,9 +378,7 @@ body {
   object-fit: cover;
   transition: transform 0.4s ease;
 }
-.project-card:hover .card-img-wrap img {
-  transform: scale(1.04);
-}
+.project-card:hover .card-img-wrap img { transform: scale(1.04); }
 .img-fallback-content {
   display: none;
   width: 100%;
@@ -384,14 +386,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.card-img-wrap.img-fallback .img-fallback-content {
-  display: flex;
-}
-.img-fallback-content svg {
-  width: 120px;
-  height: 90px;
-  opacity: 0.5;
-}
+.card-img-wrap.img-fallback .img-fallback-content { display: flex; }
+.img-fallback-content svg { width: 120px; height: 90px; opacity: 0.5; }
 
 .card-badges {
   position: absolute;
@@ -411,11 +407,10 @@ body {
   text-transform: uppercase;
   backdrop-filter: blur(8px);
 }
-.badge-embedded { background: rgba(124,243,255,0.12); color: var(--accent);    border: 1px solid rgba(124,243,255,0.2); }
-.badge-python   { background: rgba(52,211,153,0.12);  color: var(--accent-3);  border: 1px solid rgba(52,211,153,0.2);  }
-.badge-data     { background: rgba(251,191,36,0.12);  color: var(--accent-warn); border: 1px solid rgba(251,191,36,0.2); }
+.badge-embedded { background: rgba(124,243,255,0.12); color: var(--accent);      border: 1px solid rgba(124,243,255,0.2); }
+.badge-python   { background: rgba(52,211,153,0.12);  color: var(--accent-3);    border: 1px solid rgba(52,211,153,0.2);  }
+.badge-data     { background: rgba(251,191,36,0.12);  color: var(--accent-warn); border: 1px solid rgba(251,191,36,0.2);  }
 
-/* Card body */
 .card-body {
   padding: 1.5rem;
   display: flex;
@@ -424,11 +419,7 @@ body {
   flex: 1;
 }
 
-.card-lang-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
+.card-lang-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .lang-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -502,7 +493,13 @@ body {
 .about-section {
   border-top: 1px solid var(--border);
 }
+
+/* Two-column layout: text left, sidebar right */
 .about-inner {
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 4rem;
+  align-items: start;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -511,9 +508,7 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-.about-text {
-  max-width: 720px;
-}
+
 .about-text p {
   color: var(--text-dim);
   font-size: 1rem;
@@ -557,6 +552,139 @@ body {
   border-color: var(--border-h);
   color: var(--text);
   background: var(--bg-card-h);
+}
+
+/* ─── ABOUT SIDEBAR ─── */
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: sticky;
+  top: 5rem; /* stick below header while scrolling */
+}
+
+/* Profile photo */
+.profile-photo-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Glowing animated ring behind photo */
+.profile-photo-ring {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 178px;
+  height: 178px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) 0deg,
+    var(--accent-2) 120deg,
+    var(--accent-3) 240deg,
+    var(--accent) 360deg
+  );
+  opacity: 0.35;
+  filter: blur(8px);
+  animation: spinRing 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spinRing {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+.profile-photo {
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(124,243,255,0.18);
+  outline: 4px solid rgba(13,14,20,0.9);
+  outline-offset: -3px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-shadow: 0 0 0 3px rgba(124,243,255,0.08), 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* Fallback avatar shown when image is missing */
+.profile-photo-wrap.photo-fallback .photo-fallback-icon {
+  display: flex;
+}
+.photo-fallback-icon {
+  display: none;
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid rgba(124,243,255,0.15);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.photo-fallback-icon svg {
+  width: 80px;
+  height: 80px;
+  opacity: 0.4;
+}
+
+.profile-name-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+.profile-name {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.profile-role {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Certifications / badges block */
+.badges-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badges-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  width: 100%;
+  text-align: center;
+}
+
+/* Row that holds both Credly iframes */
+.badges-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  overflow: visible;
 }
 
 /* ─── CONTACT ─── */
@@ -658,7 +786,35 @@ body {
   to   { opacity: 1; }
 }
 
-/* ─── MOBILE ─── */
+/* ─── TABLET (≤900px): collapse sidebar below text ─── */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .profile-photo-wrap {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .badges-wrap {
+    width: auto;
+    flex: 1 1 240px;
+    align-items: center;
+  }
+}
+
+/* ─── MOBILE (≤768px) ─── */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -666,52 +822,60 @@ body {
     padding: 5rem 1.5rem 3rem;
     gap: 2.5rem;
   }
-
   .hero-visual {
     flex: none;
     width: 100%;
   }
-
-  .header-inner {
-    padding: 0.9rem 1.25rem;
-  }
-
-  .nav-links {
-    gap: 1.2rem;
-  }
-  .nav-links a {
-    font-size: 0.8rem;
-  }
+  .header-inner { padding: 0.9rem 1.25rem; }
+  .nav-links { gap: 1.2rem; }
+  .nav-links a { font-size: 0.8rem; }
 
   .projects-section,
   .about-section,
   .contact-section {
     padding: 4rem 1.25rem;
   }
+  .projects-grid { grid-template-columns: 1fr; }
+  .filter-bar { gap: 0.5rem; }
+  .filter-btn { padding: 0.5rem 1rem; font-size: 0.82rem; }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .contact-links { flex-direction: column; align-items: stretch; }
+  .contact-card { min-width: unset; }
+  .terminal-code { font-size: 0.7rem; padding: 1rem; }
+
+  /* Sidebar stacks fully on mobile */
+  .about-sidebar {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .filter-bar {
+  .badges-wrap {
+    align-items: center;
+    width: 100%;
+  }
+
+  .badges-label { align-self: center; }
+
+  /* Scale down Credly badges slightly on narrow screens
+     to prevent them from overflowing the viewport.
+     150px iframes × 2 + gap = ~315px — fine on most phones,
+     but we cap them just in case. */
+  .badges-row {
     gap: 0.5rem;
   }
-  .filter-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.82rem;
-  }
 
-  .contact-links {
-    flex-direction: column;
-    align-items: stretch;
+  .badge-item {
+    transform-origin: top center;
+    /* No transform needed at 150px width on 375px+ screens */
   }
-  .contact-card {
-    min-width: unset;
-  }
+}
 
-  .terminal-code {
-    font-size: 0.7rem;
-    padding: 1rem;
+/* ─── VERY SMALL (≤360px): scale badges to fit ─── */
+@media (max-width: 360px) {
+  .badge-item {
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-bottom: -2rem; /* compensate for scale reducing visual height */
   }
 }
 
