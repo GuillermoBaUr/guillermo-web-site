@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guillermo Badillo — Portfolio</title>
+  <title>GB Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -44,91 +44,79 @@
       </div>
       <a href="#projects" class="cta-btn">View Projects</a>
     </div>
-<div class="hero-visual">
-  <div class="hero-visual">
-  <div class="arch-diagram">
+    <div class="hero-visual">
+      <div class="hero-visual">
+        <div class="arch-diagram">
+          <svg width="100%" viewBox="0 0 420 622" role="img" xmlns="http://www.w3.org/2000/svg">
+            <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three-layer system architecture</title>
+            <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three isometric platforms: AI/Data Layer, Embedded Firmware, and Physical Layer</desc>
+            <defs>
+              <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#7CF3FF" stroke-width="1.5" stroke-linecap="round"/>
+              </marker>
+              <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
+              </marker>
+            </defs>
 
-      <svg width="100%" viewBox="0 0 420 622" role="img" xmlns="http://www.w3.org/2000/svg">
-  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three-layer system architecture</title>
-  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Three isometric platforms: AI/Data Layer, Embedded Firmware, and Physical Layer</desc>
-  <defs>
-    
-    <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#7CF3FF" stroke-width="1.5" stroke-linecap="round"/>
-    </marker>
-    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round"/>
-    </marker>
-  </defs>
+            <!--
+              Isometric platform formula:
+              Top face = diamond: TL(cx-hw, cy) T(cx, cy-hh) TR(cx+hw, cy) B(cx, cy+hh)
+              Left face: TL, B(top), BL(cx-hw, cy+depth), BB(cx, cy+hh+depth)
+              Right face: TR, B(top), BB(cx, cy+hh+depth), BR(cx+hw, cy+depth)
 
-  <!--
-    Isometric platform formula:
-    Top face = diamond: TL(cx-hw, cy) T(cx, cy-hh) TR(cx+hw, cy) B(cx, cy+hh)
-    Left face: TL, B(top), BL(cx-hw, cy+depth), BB(cx, cy+hh+depth)
-    Right face: TR, B(top), BB(cx, cy+hh+depth), BR(cx+hw, cy+depth)
+              Platform 1 (AI): cx=210, cy=90,  hw=148, hh=66, depth=30
+              Platform 2 (FW): cx=210, cy=250, hw=148, hh=66, depth=30
+              Platform 3 (PH): cx=210, cy=410, hw=148, hh=66, depth=30
+            -->
 
-    Platform 1 (AI): cx=210, cy=90,  hw=148, hh=66, depth=30
-    Platform 2 (FW): cx=210, cy=250, hw=148, hh=66, depth=30
-    Platform 3 (PH): cx=210, cy=410, hw=148, hh=66, depth=30
-  -->
+            <!-- ── PLATFORM 1: AI / DATA LAYER ── -->
+            <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+              <!-- Top face: diamond -->
+              <polygon points="210,24  358,90  210,156  62,90" fill="rgba(10,28,38,0.92)" stroke="#7CF3FF" stroke-width="1.1" style="fill:rgba(10, 28, 38, 0.92);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Left face -->
+              <polygon points="62,90  210,156  210,186  62,120" fill="rgba(5,16,24,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(5, 16, 24, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Right face -->
+              <polygon points="358,90  210,156  210,186  358,120" fill="rgba(3,12,18,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(3, 12, 18, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Title -->
+              <text x="210" y="95" fill="#7CF3FF" text-anchor="middle" opacity="0.95" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">AI / Data Layer</text>
+            </g>
 
-  <!-- ── PLATFORM 1: AI / DATA LAYER ── -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <!-- Top face: diamond -->
-    <polygon points="210,24  358,90  210,156  62,90" fill="rgba(10,28,38,0.92)" stroke="#7CF3FF" stroke-width="1.1" style="fill:rgba(10, 28, 38, 0.92);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Left face -->
-    <polygon points="62,90  210,156  210,186  62,120" fill="rgba(5,16,24,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(5, 16, 24, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Right face -->
-    <polygon points="358,90  210,156  210,186  358,120" fill="rgba(3,12,18,0.88)" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(3, 12, 18, 0.88);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Title -->
-    <text x="210" y="95" fill="#7CF3FF" text-anchor="middle" opacity="0.95" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">AI / Data Layer</text>
-  </g>
+            <!-- Connector AI → FW -->
+            <circle cx="210" cy="193" r="3.5" fill="#7CF3FF" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.833814;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+            <line x1="210" y1="197" x2="210" y2="230" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-  <!-- Connector AI → FW -->
-  <circle cx="210" cy="193" r="3.5" fill="#7CF3FF" style="fill:rgb(124, 243, 255);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.833814;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <line x1="210" y1="197" x2="210" y2="230" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+            <!-- ── PLATFORM 2: EMBEDDED FIRMWARE ── -->
+            <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+              <!-- Top face: diamond -->
+              <polygon points="210,237  358,303  210,369  62,303" fill="rgba(18,10,40,0.92)" stroke="#A78BFA" stroke-width="1.1" style="fill:rgba(18, 10, 40, 0.92);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Left face -->
+              <polygon points="62,303  210,369  210,399  62,333" fill="rgba(10,5,26,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(10, 5, 26, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Right face -->
+              <polygon points="358,303  210,369  210,399  358,333" fill="rgba(7,3,20,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(7, 3, 20, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Title -->
+              <text x="210" y="308" fill="#A78BFA" text-anchor="middle" opacity="0.95" style="fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Embedded Firmware</text>
+            </g>
 
-  <!-- Right spine AI → FW -->
-  <line x1="374" y1="115" x2="374" y2="278" stroke="#7CF3FF" stroke-width="0.7" stroke-opacity="0.25" stroke-dasharray="5 4" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <line x1="374" y1="277" x2="374" y2="277" stroke="#7CF3FF" stroke-width="0.7" marker-end="url(#a1)" style="fill:rgb(0, 0, 0);stroke:rgb(124, 243, 255);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+            <!-- Connector FW → PH -->
+            <circle cx="210" cy="406" r="3.5" fill="#A78BFA" style="animation-delay:.4s;fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.433867;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+            <line x1="210" y1="410" x2="210" y2="443" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="animation-delay:.5s;fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-  <!-- ── PLATFORM 2: EMBEDDED FIRMWARE ── -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <!-- Top face: diamond -->
-    <polygon points="210,237  358,303  210,369  62,303" fill="rgba(18,10,40,0.92)" stroke="#A78BFA" stroke-width="1.1" style="fill:rgba(18, 10, 40, 0.92);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Left face -->
-    <polygon points="62,303  210,369  210,399  62,333" fill="rgba(10,5,26,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(10, 5, 26, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Right face -->
-    <polygon points="358,303  210,369  210,399  358,333" fill="rgba(7,3,20,0.88)" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(7, 3, 20, 0.88);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Title -->
-    <text x="210" y="308" fill="#A78BFA" text-anchor="middle" opacity="0.95" style="fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Embedded Firmware</text>
-  </g>
-
-  <!-- Connector FW → PH -->
-  <circle cx="210" cy="406" r="3.5" fill="#A78BFA" style="animation-delay:.4s;fill:rgb(167, 139, 250);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.433867;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <line x1="210" y1="410" x2="210" y2="443" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.35" stroke-dasharray="4 4" style="animation-delay:.5s;fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
-  <!-- Right spine FW → PH -->
-  <line x1="374" y1="328" x2="374" y2="458" stroke="#A78BFA" stroke-width="0.7" stroke-opacity="0.25" stroke-dasharray="5 4" style="animation-delay:.5s;fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <line x1="374" y1="457" x2="374" y2="457" stroke="#A78BFA" stroke-width="0.7" marker-end="url(#a2)" style="fill:rgb(0, 0, 0);stroke:rgb(167, 139, 250);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
-  <!-- ── PLATFORM 3: PHYSICAL LAYER ── -->
-  <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-    <!-- Top face: diamond -->
-    <polygon points="210,450  358,516  210,582  62,516" fill="rgba(6,22,16,0.92)" stroke="#34D399" stroke-width="1.1" style="fill:rgba(6, 22, 16, 0.92);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Left face -->
-    <polygon points="62,516  210,582  210,612  62,546" fill="rgba(3,13,9,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(3, 13, 9, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Right face -->
-    <polygon points="358,516  210,582  210,612  358,546" fill="rgba(2,10,7,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(2, 10, 7, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-    <!-- Title -->
-    <text x="210" y="521" fill="#34D399" text-anchor="middle" opacity="0.95" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Physical Layer</text>
-  </g>
-
-</svg>
-    
-  </div>
-</div>
-</div>
+            <!-- ── PLATFORM 3: PHYSICAL LAYER ── -->
+            <g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+              <!-- Top face: diamond -->
+              <polygon points="210,450  358,516  210,582  62,516" fill="rgba(6,22,16,0.92)" stroke="#34D399" stroke-width="1.1" style="fill:rgba(6, 22, 16, 0.92);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:1.1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Left face -->
+              <polygon points="62,516  210,582  210,612  62,546" fill="rgba(3,13,9,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.5" style="fill:rgba(3, 13, 9, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Right face -->
+              <polygon points="358,516  210,582  210,612  358,546" fill="rgba(2,10,7,0.88)" stroke="#34D399" stroke-width="0.7" stroke-opacity="0.35" style="fill:rgba(2, 10, 7, 0.88);stroke:rgb(52, 211, 153);color:rgb(0, 0, 0);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+              <!-- Title -->
+              <text x="210" y="521" fill="#34D399" text-anchor="middle" opacity="0.95" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Space Mono&quot;, monospace, sans-serif;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:auto">Physical Layer</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ABOUT -->
@@ -417,6 +405,7 @@
           <div class="contact-icon">in</div>
           <div>
             <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Guillermo Badillo Uribe</div>
           </div>
         </a>
         <a href="https://github.com/GuillermoBaUr" target="_blank" rel="noopener" class="contact-card">
@@ -425,6 +414,7 @@
           </div>
           <div>
             <div class="contact-label">GitHub</div>
+            <div class="contact-value">GuillermoBaUr</div>
           </div>
         </a>
       </div>
@@ -435,6 +425,7 @@
   <footer class="main-footer">
     <span class="logo">GBU<span class="logo-dot">.</span></span>
     <p class="copyright">© 2026 Guillermo Badillo Uribe — Mechatronics Engineer</p>
+    <p class="version">Version 1.0.0</p>
   </footer>
 
   <!-- Credly embed script (load once) -->
