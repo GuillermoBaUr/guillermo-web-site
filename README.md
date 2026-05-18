@@ -13,10 +13,10 @@ tion.
 ## 📸 Interface
 
 <p align="center">
-  <img src="img/hero_section.png" width="300" alt="Web Page Hero" />
+  <img src="assets/images/hero_section.png" width="1200" alt="Web Page Hero" />
 </p>
 <p align="center">
-  <img src="img/about_me.png" width="1200" alt="About Me Section" />
+  <img src="assets/images/about_me.png" width="1200" alt="About Me Section" />
 </p>
 
 ---
